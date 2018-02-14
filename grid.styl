@@ -9,12 +9,16 @@
   flex-wrap: wrap
   &.reverse
     flex-direction: row-reverse
+  &.flex-nowrap
+    flex-wrap: nowrap
 
 .grid-column
   display: flex
   flex-direction: column
   &.reverse
     flex-direction: column-reverse
+  &.flex-nowrap
+    flex-wrap: nowrap
 
 .grid-item
   position: relative
@@ -120,7 +124,7 @@ grid-maker($width = false, $gutter = false, $size = false, $cols = 12)
   // COLUMN SIZES & OFFSETS
 
   if $gutter and $size
-  
+
     for offset in 0..($cols - 1)
       .grid-row
         .offset-{$size}-{offset}
@@ -133,6 +137,9 @@ grid-maker($width = false, $gutter = false, $size = false, $cols = 12)
         max-width: ( 100% / $cols ) * col
       .grid-column > .item-{$size}-{col}
         max-height: ( 100% / $cols ) * col
+
+    .item-{$size}-auto
+      flex-basis: auto
 
     for count in 1..4
       .text-columns-{$size}-{count}
