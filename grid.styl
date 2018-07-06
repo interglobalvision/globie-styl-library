@@ -148,7 +148,7 @@ grid-maker($width = false, $gutter = false, $size = false, $cols = 12)
 
 // MARGINS & PADDING
 
-space-maker($micro = false, $tiny = false, $small = false, $basic = false, $mid = false, $large = false)
+space-maker($micro = false, $tiny = false, $small = false, $basic = false, $mid = false, $large = false, $extra = false)
   if $micro
     .margin-top-micro
       margin-top: $micro
@@ -208,6 +208,16 @@ space-maker($micro = false, $tiny = false, $small = false, $basic = false, $mid 
       padding-top: $large
     .padding-bottom-large
       padding-bottom: $large
+
+  if $extra
+    .margin-top-large
+      margin-top: $extra
+    .margin-bottom-large
+      margin-bottom: $extra
+    .padding-top-large
+      padding-top: $extra
+    .padding-bottom-large
+      padding-bottom: $extra
 
 // GRID TEST
 
