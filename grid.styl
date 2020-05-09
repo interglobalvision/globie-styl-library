@@ -133,6 +133,7 @@ grid-maker($width = false, $gutter = false, $size = false, $cols = 12)
 
     for col in 1..$cols
       .item-{$size}-{col}
+        display: initial
         flex-basis: ( 100% / $cols ) * col
       .grid-row > .item-{$size}-{col}
         max-width: ( 100% / $cols ) * col
@@ -140,7 +141,11 @@ grid-maker($width = false, $gutter = false, $size = false, $cols = 12)
         max-height: ( 100% / $cols ) * col
 
     .item-{$size}-auto
+      display: initial
       flex-basis: auto
+
+    .item-{$size}-hide
+      display: none
 
     for count in 1..4
       .text-columns-{$size}-{count}
