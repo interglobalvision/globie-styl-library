@@ -141,6 +141,10 @@ grid-maker($width = false, $gutter = false, $size = false, $cols = 12)
 
     .item-{$size}-auto
       flex-basis: auto
+    .grid-row > .item-{$size}-auto
+      max-width: none
+    .grid-column > .item-{$size}-auto
+      max-height: none
 
     for count in 1..4
       .text-columns-{$size}-{count}
